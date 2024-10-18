@@ -4,7 +4,7 @@ import chris from '../../../assets/logo/Group.png'
 const ProductCard = ({ name, product, size, price, description, image }) => {
   return (
     <div className=' rounded-lg p-2 shadow-md pb-5'>
-      <img src={image} alt={name} className='w-72 h-72 object-cover rounded-lg mb-3 mx-auto' />
+      <img src={image} alt={name} className='w-80 h-80 object-cover rounded-lg mb-3 mx-auto' />
       <h2 className='text-lg font-semibold w-64 mx-2'>{name}</h2>
       <div className='flex my-2'>
       <p className='text-sm text-gray-500 mx-2 font-normal'>Product : <strong>{product}</strong></p>
