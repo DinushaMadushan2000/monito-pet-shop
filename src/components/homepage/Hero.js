@@ -5,28 +5,30 @@ import 'font-awesome/css/font-awesome.min.css'; // Ensure Font Awesome is import
 import { IoSearchOutline } from "react-icons/io5";
 import { FaBars } from "react-icons/fa"; 
 import Frame from '../../assets/logo/Frame.png'
+
 const items = [
-    {
-      title: 'Home',
-      links: '/'
-    },
-    {
-      title: 'Category',
-      links: '/category'
-    },
-    {
-      title: 'About',
-      links: '/about'
-    },
-    {
-      title: 'Contact',
-      links: '/contact'
-    },
-  ];
+  {
+    title: 'Home',
+    links: '/'
+  },
+  {
+    title: 'Category',
+    links: '/category'
+  },
+  {
+    title: 'About',
+    links: '/about'
+  },
+  {
+    title: 'Contact',
+    links: '/contact'
+  },
+];
 const Hero = () => {
   return (
+    
     <div className='relative bg-primary w-screen md:h-[45rem] h-[52rem] rounded-b-3xl'>
-        <nav className='  hidden md:flex justify-between items-center  top-0 left-0 right-0 p-4  ml-[12rem] mr-[12rem]'>
+      <nav className='  hidden md:flex justify-between items-center  top-0 left-0 right-0 p-4  ml-[12rem] mr-[12rem]'>
         <div>
             
         </div>
@@ -68,12 +70,12 @@ const Hero = () => {
      
     <nav className='md:hidden flex justify-between items-center top-0 left-0 right-0 p-4 z-50 pt-10'>
       
-     
+      {/* Hamburger Menu on the Left */}
       <div className="hamburger-menu">
         <FaBars className="text-gray-700 text-2xl" />
       </div>
 
-      
+      {/* Logo in the Center */}
       <div className='logo text-2xl font-bold'>
         <img
         src={Frame}
@@ -81,11 +83,44 @@ const Hero = () => {
        
       </div>
 
-      
+      {/* Search Button on the Right */}
       <div className='search-button'>
         <IoSearchOutline className='text-secondary text-3xl' />
       </div>
     </nav>
+      
+      <div className='absolute -left-[95px] -right-10 md:left-0 w-[528px] items-end md:w-screen inset-0  md:top-[9.6rem] flex justify-end  md:clip-auto clip-path-mobile '>
+        <img 
+          src={bannerImg} 
+          alt="Hero" 
+          className='object-cover md:w-[55%] w-[85%] md:h-full h-[60%] ' // Add clipping for mobile
+        />
+      </div>
+
+      
+      <div className='absolute mx-5 top-10 text-accent mt-20 md:w-[30rem] md:m-44'>
+        <h1 className='text-5xl font-bold  md:text-6xl'>
+          One More Friend
+        </h1>
+        <h2 className='text-xl font-semibold md:text-4xl'>
+          Thousands More Fun!
+        </h2>
+        <p className='text-xs mt-2 md:text-base md:mt-5'>
+          Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
+        </p>
+        <div className='flex space-x-3 mt-5 justify-center md:mt-10 md:justify-start'>
+  <button className='border-2 border-secondary px-8 py-3  rounded-full flex items-center space-x-2'>
+    <span>View Intro</span>
+    <CgPlayButtonO />
+  </button>
+  
+  <button className='text-white bg-secondary py-3 px-8 rounded-full'>
+    Explore Now
+  </button>
+
+        </div>
+        
+      </div>
     </div>
   )
 }
