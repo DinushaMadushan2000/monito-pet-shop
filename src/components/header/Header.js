@@ -1,32 +1,32 @@
-import React from 'react'
-import bannerImg from '../../assets/images/Homepage/Hero Banner/edit/good-humored-woman-holds-dog-laughing-pink-background-emotional-sort-haired-girl-grey-hoodie-poses-with-corgi-isolated 1.png'
-import { CgPlayButtonO } from "react-icons/cg";
+import React from 'react';
 import 'font-awesome/css/font-awesome.min.css'; // Ensure Font Awesome is imported
 import { IoSearchOutline } from "react-icons/io5";
 import { FaBars } from "react-icons/fa"; 
 import Frame from '../../assets/logo/Frame.png'
+
 const items = [
-    {
-      title: 'Home',
-      links: '/'
-    },
-    {
-      title: 'Category',
-      links: '/category'
-    },
-    {
-      title: 'About',
-      links: '/about'
-    },
-    {
-      title: 'Contact',
-      links: '/contact'
-    },
-  ];
-const Hero = () => {
+  {
+    title: 'Home',
+    links: '/'
+  },
+  {
+    title: 'Category',
+    links: '/category'
+  },
+  {
+    title: 'About',
+    links: '/about'
+  },
+  {
+    title: 'Contact',
+    links: '/contact'
+  },
+];
+
+const Header = () => {
   return (
-    <div className='relative bg-primary w-screen md:h-[45rem] h-[52rem] rounded-b-3xl'>
-        <nav className='  hidden md:flex justify-between items-center  top-0 left-0 right-0 p-4  ml-[12rem] mr-[12rem]'>
+    <>
+      <nav className='  hidden md:flex justify-between items-center  top-0 left-0 right-0 p-4  z-50 ml-[12rem] mr-[12rem]'>
         <div>
             
         </div>
@@ -66,14 +66,14 @@ const Hero = () => {
         </div>
       </nav>
      
-    <nav className='md:hidden flex justify-between items-center top-0 left-0 right-0 p-4 z-50 pt-10'>
+    <nav className='md:hidden flex justify-between items-center top-0 left-0 right-0 p-4 z-50 mt-5'>
       
-     
+      {/* Hamburger Menu on the Left */}
       <div className="hamburger-menu">
         <FaBars className="text-gray-700 text-2xl" />
       </div>
 
-      
+      {/* Logo in the Center */}
       <div className='logo text-2xl font-bold'>
         <img
         src={Frame}
@@ -81,13 +81,17 @@ const Hero = () => {
        
       </div>
 
-      
+      {/* Search Button on the Right */}
       <div className='search-button'>
         <IoSearchOutline className='text-secondary text-3xl' />
       </div>
     </nav>
-    </div>
-  )
+  
+
+     
+      
+    </>
+  );
 }
 
-export default Hero
+export default Header;
