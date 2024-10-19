@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import Homepage from "./components/homepage/Homepage";
-import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SmallDog from "./components/smalldog/SmallDog";
@@ -11,20 +10,11 @@ function App() {
   return (
     <>
     <Router>
-      
-
-     
-      
-
-    
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/dog/smalldog" element={<SmallDog />} />
         <Route path="/dog/largedog/shibainusepia" element={<DogDetails />} />
-        
-      </Routes>
-
-     
+        </Routes>
       <Footer />
     </Router>
     </>
