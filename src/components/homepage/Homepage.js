@@ -1,8 +1,10 @@
 import React from 'react'
 import Hero from './Hero'
 import Pets from './Pets'
-import Banner1 from './Banners/Banner1'
-import Product from './Product'
+import Banner1 from '../Banners/Banner1'
+import Products from './Product'
+
+
 
 const Homepage = () => {
   return (
@@ -10,7 +12,7 @@ const Homepage = () => {
         <Hero/>
         <Pets/>
         <Banner1/>
-        <Product/>
+        <Products/>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from '../../../assets/images/Homepage/Otherone/edit/Untitled-1.png';
+import Banner from '../../assets/images/Homepage/Otherone/edit/Untitled-1.png';
 import { CgPlayButtonO } from 'react-icons/cg';
 
 const Banner1 = () => {

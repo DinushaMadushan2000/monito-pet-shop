@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductCard from './Custom Cards/ProductCard';
+import ProductCard from '../Custom Cards/ProductCard';
 
 const Products = () => {
   const [products, setProducts] = useState([]);

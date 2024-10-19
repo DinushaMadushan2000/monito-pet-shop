@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import PetCard from './Custom Cards/PetCard';
+import PetCard from '../Custom Cards/PetCard';
 
 const Pets = () => {
   const [pets, setPets] = useState([]);

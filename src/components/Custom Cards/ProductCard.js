@@ -1,5 +1,5 @@
 import React from 'react';
-import chris from '../../../assets/logo/Group.png'
+import chris from '../../assets/logo/Group.png'
 
 const ProductCard = ({ name, product, size, price, description, image }) => {
   return (
