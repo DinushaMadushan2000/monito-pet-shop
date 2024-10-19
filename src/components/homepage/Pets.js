@@ -4,6 +4,8 @@ import PetCard from './Custom Cards/PetCard';
 
 const Pets = () => {
   const [pets, setPets] = useState([]);
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null);
 
   
   useEffect(() => {
@@ -11,8 +13,11 @@ const Pets = () => {
       try {
         const response = await axios.get('https://monitor-backend-rust.vercel.app/api/pets');
         setPets(response.data);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching pet data:', error);
+        setError('Error fetching pet data. Please try again later.'); 
+        setLoading(false); 
       }
     };
     fetchPets();
@@ -37,30 +42,35 @@ const Pets = () => {
             </div>
         
         </div>
+        {loading ? (
+          <p>Loading pets...</p> // Loading message
+        ) : error ? (
+          <p className='my-3 text-center text-red-600 bg-red-200 p-3 border-2 border-red-600'>{error}</p> // Error message
+        ) : pets.length === 0 ? (
+          <p className='text-center'>No pets available at the moment.</p> // Message when no pets are available
+        ) : (
+          <div className='pet-cards grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8'>
+            {pets.map((pet) => (
+              <PetCard
+                key={pet.id}
+                id={pet.id}
+                breed={pet.breed}
+                age={pet.age}
+                gender={pet.gender}
+                price={pet.price}
+                image={pet.image} 
+              />
+            ))}
+          </div>
+        )}
 
-        <div className='pet-cards grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8'>
-          {pets.map((pet) => (
-            <PetCard
-              key={pet.id}
-              id={pet.id}
-              breed={pet.breed}
-              age={pet.age}
-              gender={pet.gender}
-              price={pet.price}
-              image={pet.image} // Pass image prop to PetCard
-            />
-          ))}
-        </div>
-
-
-        <button className=' md:hidden border border-secondary w-full py-3 justify-center rounded-full flex items-center space-x-2'>
-    <span>View more </span>
-    <span>&gt;</span>
-  </button>
-    </div>
+        <button className='md:hidden border border-secondary w-full py-3 justify-center rounded-full flex items-center space-x-2'>
+          <span>View more</span>
+          <span>&gt;</span>
+        </button>
+      </div>
     </>
-    
-  )
-}
+  );
+};
 
-export default Pets
+export default Pets;
